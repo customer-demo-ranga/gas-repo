@@ -15,10 +15,10 @@ name: Codacy Security Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    branches: [ "*" ]
   schedule:
     - cron: '19 23 * * 3'
 
@@ -48,7 +48,6 @@ jobs:
           verbose: true
           output: results.sarif
           format: sarif
-          tool: semgrep
           # Adjust severity of non-security issues
           gh-code-scanning-compat: true
           # Force 0 exit code to allow SARIF file generation
